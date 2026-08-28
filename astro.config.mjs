@@ -1,0 +1,21 @@
+import { defineConfig } from "astro/config";
+import sitemap from "@astrojs/sitemap";
+import react from "@astrojs/react";
+import mdx from "@astrojs/mdx";
+import icon from "astro-icon";
+
+
+// https://astro.build/config
+export default defineConfig({
+  site: "https://andre-vincent.github.io",
+  base: '/astro-pico-fr',
+  integrations: [react(), icon(), mdx(), sitemap()],
+  image: {
+    domains: ["astro.build"],
+    remotePatterns: [
+      {
+        protocol: "https",
+      },
+    ],
+  },
+});
